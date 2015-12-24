@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if req %}
+
+    <ul>
+        {% for book in req %}
+        <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books matched your search criteria.</p>
+{% endif %}
+
+
+{% endblock %}
